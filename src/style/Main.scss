@@ -1,0 +1,27 @@
+body {}
+
+.main-container {
+    background: #eae8ee;
+    display: flex;
+}
+
+.top-bar {
+    background: #ddd;
+    display: flex;
+    * {
+        flex-grow: 1;
+    }
+}
+
+.sidebar {
+    background: #a072e0;
+    min-width: 100px;
+    flex-grow: 1;
+}
+
+.content {
+    background: #ee2255;
+    flex-basis: 5;
+    min-width: 100px;
+    flex-grow: 5;
+}
