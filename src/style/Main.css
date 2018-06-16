@@ -1,29 +1,137 @@
-.main-container {
-  background: #eae8ee;
-  display: flex; }
+*:hover {
+  transition: 200ms; }
+
+*::placeholder {
+  color: rgba(0, 0, 0, 0.2); }
+
+.hidden {
+  display: none; }
+
+html,
+body,
+#root,
+#PageContainer {
+  height: 100%;
+  margin: 0px;
+  padding: 0px; }
+
+[contenteditable]:focus {
+  outline: 0px solid transparent; }
 
 .top-bar {
-  background: #ddd;
-  display: flex; }
-  .top-bar * {
-    flex-grow: 1; }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  background: #ffbb00; }
+  .top-bar .logo {
+    text-align: center; }
+  .top-bar input {
+    height: 70%;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding: 10px;
+    width: 70%; }
+  .top-bar .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 30px;
+    margin: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    user-select: none; }
+    .top-bar .btn:hover {
+      opacity: 0.5; }
+
+.main-container {
+  background: #eeeeee;
+  display: flex;
+  height: 95%; }
 
 .sidebar {
-  background: #a072e0;
+  background: transparent;
   min-width: 100px;
   flex-grow: 1; }
 
 .content {
-  background: #ee2255;
+  background: #eeeeee;
   flex-basis: 5;
   min-width: 100px;
   flex-grow: 5; }
 
 .dodajNotatke-input {
   background: #fff;
-  width: 500px;
-  height: 30px;
-  margin: 10px auto;
+  width: 600px;
+  margin: 30px auto 10px;
+  padding: 0px 20px;
+  box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.2); }
+  .dodajNotatke-input .tytul {
+    width: 100%;
+    margin: 10px 0; }
+    .dodajNotatke-input .tytul input {
+      font-size: 1.1em;
+      font-weight: bold; }
+  .dodajNotatke-input input {
+    outline: 0px solid transparent;
+    border: none;
+    width: 100%;
+    user-select: all; }
+  .dodajNotatke-input .buttons-cont {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 10px 0 5px; }
+  .dodajNotatke-input .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    user-select: none; }
+    .dodajNotatke-input .btn:hover {
+      opacity: 0.5; }
+  .dodajNotatke-input .zamknij-cont {
+    flex-direction: row-reverse;
+    width: 100%; }
+  .dodajNotatke-input .zamknij {
+    min-width: 100px;
+    font-size: 0.9em;
+    border: none; }
+  .dodajNotatke-input .zwinietyInput {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    cursor: text; }
+    .dodajNotatke-input .zwinietyInput .tekst {
+      width: 100%; }
+  .dodajNotatke-input .rozwiniete {
+    display: none; }
+
+.aktywny .rozwiniete {
+  display: block; }
+
+.aktywny .zwiniete {
+  display: none; }
+
+.notatki-cont {
+  margin: 10px;
   display: flex;
-  align-items: center;
-  padding: 10px; }
+  flex-wrap: wrap; }
+  .notatki-cont * {
+    flex-grow: 1; }
+
+.notatka {
+  padding: 10px;
+  background: white;
+  box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.2);
+  margin: 5px;
+  min-width: 100px; }
+  .notatka .tytul {
+    font-weight: 600;
+    margin: 0 0 15px; }

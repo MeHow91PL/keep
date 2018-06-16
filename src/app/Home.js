@@ -1,16 +1,19 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import NotatkaInput from './NotatkaInput/NotatkaInputContainer';
+import {connect} from 'react-redux';
+import Notatka from './Notatka/Notatka';
 
-export default class home extends Component {
+ class Home extends Component {
     render() {
         return (
-            <div>
+            <div id="PageContainer">
                 <div className="top-bar">
-                    <button className="menu-btn">M</button>
-                    <div className="logo">Mehow Keep</div>
-                    <div><input type="search" name="wyszukiwarka" id="wyszukiwarka"/></div>
-                    <button className="odswiez-btn">O</button>
-                    <button className="widok-btn">V</button>
-                    <button className="profil-btn">P</button>
+                    <div className="menu btn">M</div>
+                    <div className="logo"><span>Mehow</span> <span>Keep</span> </div>
+                   <input type="search" name="wyszukiwarka" id="wyszukiwarka" placeholder="Szukaj..."/>
+                    <div className="odswiez btn">O</div>
+                    <div className="widok btn">V</div>
+                    <div className="profil btn">P</div>
                 </div>
                 <div className="main-container">
                     <div className="sidebar">
@@ -25,8 +28,15 @@ export default class home extends Component {
                         </ul>
                     </div>
                     <div className="content">
-                        <div className="dodajNotatke-input" contentEditable>
-                            <span>Utwórz notatke...</span>
+                        <NotatkaInput />
+                        <div className="notatki-cont">
+                            {
+                                this.props.notatki.map(notatka =>
+                                (
+                                    <Notatka {...notatka} key={notatka.id} />
+                                )
+                                )
+                            }
                         </div>
                     </div>
                 </div>
@@ -34,3 +44,9 @@ export default class home extends Component {
         )
     }
 }
+
+const mapStateToProps = (state, ownProps) => ({
+    notatki: state.ListaNotatek
+})
+
+export default connect(mapStateToProps)(Home);
