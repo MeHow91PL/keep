@@ -8,10 +8,9 @@
 
 # production
 /build
-<<<<<<< HEAD
-/testy
-=======
->>>>>>> f33be863a0a29fa8e9694d012ee43bc51ae5cf6e
+
+package.json
+package-lock.json
 
 # misc
 .DS_Store
@@ -22,8 +21,5 @@
 
 npm-debug.log*
 yarn-debug.log*
-<<<<<<< HEAD
 yarn-error.log*
-=======
 yarn-error.log*
->>>>>>> f33be863a0a29fa8e9694d012ee43bc51ae5cf6e

@@ -13,10 +13,20 @@ export default class home extends Component {
                     <button className="profil-btn">P</button>
                 </div>
                 <div className="main-container">
-                    <div className="sidebar">sidebar</div>
+                    <div className="sidebar">
+                        <ul>
+                            <li>Opcja</li>
+                            <li>Opcja</li>
+                            <li>Opcja</li>
+                            <li>Opcja</li>
+                            <hr/>
+                            <li>Opcja</li>
+                            <li>Opcja</li>
+                        </ul>
+                    </div>
                     <div className="content">
-                        <div className="dodaj-notatke-input">
-                            
+                        <div className="dodajNotatke-input" contentEditable>
+                            <span>Utwórz notatke...</span>
                         </div>
                     </div>
                 </div>
