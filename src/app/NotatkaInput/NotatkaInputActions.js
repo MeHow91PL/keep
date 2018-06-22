@@ -1,5 +1,4 @@
 export const dodajNotatke = (payload) => {
-    
     return ({type : 'DODAJ_NOTATKE', payload})
 }
 

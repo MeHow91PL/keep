@@ -1,24 +1,28 @@
 import React from 'react';
 
 const NotatkaInput = ({nowaNotka, dodajNotatke, zmienTekst, rozwinNotke, zwinNotke}) => {
-    console.log(nowaNotka.aktywny);
-
+    console.log(nowaNotka);
+    let tytulInputRef,
+        tekstInputRef;
     return (
         <div className={`dodajNotatke-input ${nowaNotka.aktywny}`}>
             <div className="tytul rozwiniete">
                 <input
+                    ref={node => tytulInputRef = node}
                     type="text"
                     name="nowaNotatkaTytuł"
                     id="nowaNotatkaTytuł"
-                    onKeyUpCapture={(e) => zmienTekst({
+                    onKeyUp={(e) => zmienTekst({
                     ...nowaNotka,
                     tytul: e.target.value
                 })}
                     placeholder="Tytuł"/>
             </div>
+
             <div className="zwinietyInput">
                 <div className="tekst">
                     <input
+                        ref={node => tekstInputRef = node}
                         type="text"
                         name="nowaNotatkaTekst"
                         id="nowaNotatkaTekst"
@@ -30,7 +34,16 @@ const NotatkaInput = ({nowaNotka, dodajNotatke, zmienTekst, rozwinNotke, zwinNot
                         onFocus={rozwinNotke}/>
                 </div>
                 <div className="buttons-cont zwiniete">
-                    <div className="DodajNotatke btn" onClick={() => dodajNotatke(nowaNotka)}>+</div>
+                    <div
+                        className="DodajNotatke btn"
+                        onClick={() => {
+                        if (nowaNotka.tekst.trim() !== "") {
+                            dodajNotatke(nowaNotka);
+                            zmienTekst({tytul: '', tekst: ''});
+                            tytulInputRef.value = '';
+                            tekstInputRef.value = '';
+                        };
+                    }}>+</div>
                     <div className="NotatkaNowaLista btn"></div>
                     <div className="NotatkaFoto btn"></div>
                     <div className="NotatkaRys btn"></div>
@@ -51,7 +64,12 @@ const NotatkaInput = ({nowaNotka, dodajNotatke, zmienTekst, rozwinNotke, zwinNot
                     <div
                         className="zamknij btn"
                         onClick={() => {
-                        dodajNotatke(nowaNotka);
+                        if (nowaNotka.tekst.trim() !== "") {
+                            dodajNotatke(nowaNotka);
+                            zmienTekst({tytul: '', tekst: ''});
+                            tytulInputRef.value = '';
+                            tekstInputRef.value = '';
+                        };
                         zwinNotke();
                     }}>Zamknij</div>
                 </div>

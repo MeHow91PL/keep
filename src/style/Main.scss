@@ -1,9 +1,22 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
 *:hover {
-    transition: 200ms;
+    transition: opacity .218s linear, visibility 0s linear;
 }
 
 *::placeholder {
     color: rgba(0, 0, 0, 0.2)
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
 }
 
 .hidden {
@@ -32,42 +45,46 @@ body,
     .logo {
         text-align: center;
     }
-    input {
+    .szukaj-cont {
+        display: flex;
+        align-items: center;
         height: 70%;
+        width: 100%;
+        margin: 0 5%;
+        border-radius: 15px 15px 5px;
         background: rgba(0, 0, 0, 0.05);
-        border: 1px solid transparent;
-        border-radius: 3px;
-        padding: 10px;
-        width: 70%;
+        .szukaj-btn {
+            cursor: pointer;
+            padding: 4px 10px 0 12px;
+        }
+        input {
+            width: 100%;
+            border: 1px solid transparent;
+            background: transparent;
+            border-radius: 3px;
+            outline: 0px solid transparent;
+        }
     }
-        
-.btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 30px;
-    margin: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    user-select: none;
-    &:hover {
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 30px;
+        padding: 15px;
+        cursor: pointer;
+        user-select: none;
         opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        }
     }
 }
-}
-
 
 .main-container {
     background: #eeeeee;
     display: flex;
     height: 95%;
-}
-
-.sidebar {
-    background: transparent;
-    min-width: 100px;
-    flex-grow: 1;
 }
 
 .content {
@@ -85,7 +102,7 @@ body,
     box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.2);
     .tytul {
         width: 100%;
-        margin: 10px 0;
+        padding: 20px 0 10px;
         input {
             font-size: 1.1em;
             font-weight: bold;
@@ -130,7 +147,7 @@ body,
         display: flex;
         width: 100%;
         align-items: center;
-    cursor: text;
+        cursor: text;
         .tekst {
             width: 100%;
         }
@@ -153,9 +170,6 @@ body,
     margin: 10px;
     display: flex;
     flex-wrap: wrap;
-    * {
-        flex-grow: 1;
-    }
 }
 
 .notatka {
@@ -163,7 +177,7 @@ body,
     background: white;
     box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.2);
     margin: 5px;
-    min-width: 100px;
+    flex-basis: 240px;
     .tytul {
         font-weight: 600;
         margin: 0 0 15px;
