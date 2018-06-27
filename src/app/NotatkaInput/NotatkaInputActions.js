@@ -1,4 +1,6 @@
 export const dodajNotatke = (payload) => {
+    console.log(payload,"elo");
+    
     return ({type : 'DODAJ_NOTATKE', payload})
 }
 

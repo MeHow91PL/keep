@@ -1,13 +1,15 @@
+@import "zmienne.scss";
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    color: rgba(0, 0, 0, .87);
+}
 
-*:hover {
-    transition: opacity .218s linear, visibility 0s linear;
+* {
+    transition: 150ms ease-in;
 }
 
 *::placeholder {
-    color: rgba(0, 0, 0, 0.2)
+    color: rgba(0, 0, 0, 0.5)
 }
 
 hr {
@@ -19,8 +21,20 @@ hr {
     padding: 0;
 }
 
+input {
+    background: transparent
+}
+
 .hidden {
-    display: none
+    display: none !important;
+}
+
+.collapsed-h {
+    height: 0 !important;
+}
+
+.collapsed-w {
+    height: 0 !important;
 }
 
 html,
@@ -82,88 +96,16 @@ body,
 }
 
 .main-container {
-    background: #eeeeee;
+    background: #e8e8e8;
     display: flex;
     height: 95%;
 }
 
 .content {
-    background: #eeeeee;
+    background: #e8e8e8;
     flex-basis: 5;
     min-width: 100px;
     flex-grow: 5;
-}
-
-.dodajNotatke-input {
-    background: #fff;
-    width: 600px;
-    margin: 30px auto 10px;
-    padding: 0px 20px;
-    box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.2);
-    .tytul {
-        width: 100%;
-        padding: 20px 0 10px;
-        input {
-            font-size: 1.1em;
-            font-weight: bold;
-        }
-    }
-    input {
-        outline: 0px solid transparent;
-        border: none;
-        width: 100%;
-        user-select: all;
-    }
-    .buttons-cont {
-        display: flex;
-        justify-content: space-between;
-        width: 80%;
-        margin: 10px 0 5px;
-    }
-    .btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 5px;
-        width: 20px;
-        height: 20px;
-        border: 1px solid #ddd;
-        cursor: pointer;
-        user-select: none;
-        &:hover {
-            opacity: 0.5;
-        }
-    }
-    .zamknij-cont {
-        flex-direction: row-reverse;
-        width: 100%
-    }
-    .zamknij {
-        min-width: 100px;
-        font-size: 0.9em;
-        border: none;
-    }
-    .zwinietyInput {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        cursor: text;
-        .tekst {
-            width: 100%;
-        }
-    }
-    .rozwiniete {
-        display: none;
-    }
-}
-
-.aktywny {
-    .rozwiniete {
-        display: block;
-    }
-    .zwiniete {
-        display: none
-    }
 }
 
 .notatki-cont {
@@ -174,12 +116,32 @@ body,
 
 .notatka {
     padding: 10px;
-    background: white;
-    box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.2);
+    background: $brudnyBialy;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.20);
     margin: 5px;
     flex-basis: 240px;
+    &:hover {
+        box-shadow: 0 0px 11px rgba(0, 0, 0, 0.20);
+        cursor: default;
+    }
     .tytul {
         font-weight: 600;
-        margin: 0 0 15px;
+    }
+    .tresc {
+        margin: 15px 0 25px;
+    }
+    .buttons {
+        height: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        overflow: hidden;
+    }
+    .btn {
+        opacity: 0.5;
+        cursor: pointer;
+        &:hover {
+            opacity: 1;
+        }
     }
 }

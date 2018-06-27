@@ -1,0 +1,63 @@
+.dodajNotatke-input {
+  background: #fafafa;
+  margin: 30px auto 10px;
+  padding: 0px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  max-width: 600px; }
+  .dodajNotatke-input .tytul {
+    width: 100%;
+    padding: 20px 0 10px; }
+    .dodajNotatke-input .tytul input {
+      font-size: 1.1em;
+      font-weight: bold; }
+  .dodajNotatke-input input {
+    outline: 0px solid transparent;
+    border: none;
+    width: 100%;
+    user-select: all; }
+  .dodajNotatke-input .buttons-cont {
+    display: flex;
+    margin: 10px 0 5px;
+    justify-content: flex-end; }
+  .dodajNotatke-input .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3px 13px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.5; }
+    .dodajNotatke-input .btn:hover {
+      opacity: 1; }
+  .dodajNotatke-input .zamknij {
+    min-width: 100px;
+    font-size: 0.9em;
+    border: none; }
+  .dodajNotatke-input .zwinietyInput {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    cursor: text; }
+    .dodajNotatke-input .zwinietyInput .tekst {
+      width: 100%; }
+  .dodajNotatke-input .rozwiniete {
+    display: none; }
+    .dodajNotatke-input .rozwiniete > .buttons-cont {
+      justify-content: flex-start; }
+      .dodajNotatke-input .rozwiniete > .buttons-cont .btn {
+        margin: 0;
+        padding: 15px; }
+        .dodajNotatke-input .rozwiniete > .buttons-cont .btn:first-child {
+          padding-left: 0px; }
+        .dodajNotatke-input .rozwiniete > .buttons-cont .btn:last-child {
+          padding-right: 0px;
+          justify-content: flex-end;
+          width: 100%; }
+
+.aktywny .rozwiniete {
+  display: block; }
+
+.aktywny .zwiniete {
+  display: none; }
