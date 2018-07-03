@@ -1,21 +1,22 @@
 $breakpoint-tablet: 768px;
-$sidebar-width: 200px;
+$sidebar-width: 240px;
 .sidebar {
     background: transparent;
     width: $sidebar-width;
-    flex-grow: 1;
+    flex-grow: 0;
+    overflow-x: hidden;
     overflow-y: auto;
-    transition: 800ms;
+    transition: background 400ms, width 400ms, transform 400ms;
     .sidebar-content {
         display: flex;
         flex-direction: column;
         font-size: 13px;
+        transition: 0ms;
         >div {
             display: flex;
             align-items: center;
             cursor: pointer;
             padding: 10px;
-            transition: 50ms;
             &:hover {
                 background: rgba(0, 0, 0, 0.3);
             }
@@ -28,12 +29,49 @@ $sidebar-width: 200px;
             border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
     }
-        &:hover{
-            }
-
-    @media (max-width: $breakpoint-tablet) {
-        overflow: hidden;
+    &:hover {}
+    &.show {
+        width: $sidebar-width;
+        transform: translate(0);
+    }
+    &.hide {
         width: 0;
         transform: translate(-$sidebar-width);
+    }
+    @media (max-width: $breakpoint-tablet) {
+        height: 100vh;
+        top: 0;
+        width: 0;
+        transform: translate(-$sidebar-width);
+        position: absolute;
+        &.show {
+            width: $sidebar-width;
+            height: 100vh;
+            transform: translate(0);
+            z-index: 2;
+            background: white;
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 1px 0 5px rgba(0, 0, 0, 0.4);
         }
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .test {
+        background: red;
+        width: 0;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        opacity: 0;
+        pointer-events: all;
+        transition: 0ms;
+        &.hide {
+            width: 0;
+        }
+        &.show {
+            width: 100%;
+        }
+    }
 }

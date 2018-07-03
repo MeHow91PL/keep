@@ -2,9 +2,6 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: rgba(0, 0, 0, 0.87); }
 
-* {
-  transition: 150ms ease-in; }
-
 *::placeholder {
   color: rgba(0, 0, 0, 0.5); }
 
@@ -18,6 +15,11 @@ hr {
 
 input {
   background: transparent; }
+
+.stop-scroll {
+  height: calc(100%);
+  overflow: hidden;
+  touch-action: none; }
 
 .hidden {
   display: none !important; }
@@ -57,7 +59,11 @@ body,
     background: rgba(0, 0, 0, 0.05); }
     .top-bar .szukaj-cont .szukaj-btn {
       cursor: pointer;
+      opacity: 0.5;
       padding: 4px 10px 0 12px; }
+      .top-bar .szukaj-cont .szukaj-btn svg {
+        width: 30px;
+        height: 30px; }
     .top-bar .szukaj-cont input {
       width: 100%;
       border: 1px solid transparent;
@@ -76,6 +82,9 @@ body,
     opacity: 0.5; }
     .top-bar .btn:hover {
       opacity: 1; }
+    .top-bar .btn svg {
+      width: 30px;
+      height: 30px; }
 
 .main-container {
   background: #e8e8e8;

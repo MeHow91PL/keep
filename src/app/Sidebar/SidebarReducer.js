@@ -1,9 +1,9 @@
-export const sidebarReducer = (state = {show: false}, action) => {
-    console.log("sidebarReducer");
-    
+export const sidebarReducer = (state = {}, action) => {
+
     switch (action.type) {
         case 'TOGGLE_SIDEBAR':
-            return  {...state, show: !state.show};    
+            console.log("TOGGLE_SIDEBAR");
+            return { ...state, show: !state.show };
         default:
             return state
     }
