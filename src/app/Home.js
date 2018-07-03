@@ -15,8 +15,6 @@ class Home extends Component {
 
     render() {
         const { toggleSidebar, sidebar } = this.props;
-        console.log(sidebar.show);
-
         return (
             <div id="PageContainer" className={sidebar.show ? 'stop-scroll' : ''} >
                 <div className="top-bar">
@@ -79,7 +77,7 @@ class Home extends Component {
 
                     <div className="content">
                         <NotatkaInput />
-                        <NotesList notes={this.props.notatki} />
+                        <NotesList notes={this.props.notatki} activeNote={this.props.activeNote} />
                     </div>
                 </div>
             </div>
@@ -90,7 +88,8 @@ class Home extends Component {
 const mapStateToProps = (state, ownProps) => (
     {
         notatki: state.NotesList,
-        sidebar: state.Sidebar
+        sidebar: state.Sidebar,
+        activeNote: state.Note
     }
 )
 

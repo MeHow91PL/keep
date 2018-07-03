@@ -28,7 +28,10 @@ input {
   height: 0 !important; }
 
 .collapsed-w {
-  height: 0 !important; }
+  width: 0 !important; }
+
+.invisible {
+  opacity: 0; }
 
 html,
 body,
@@ -100,14 +103,16 @@ body,
 .notatki-cont {
   margin: 10px;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  align-items: flex-start; }
 
 .notatka {
   padding: 10px;
   background: #fafafa;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   margin: 5px;
-  flex-basis: 240px; }
+  flex-basis: 240px;
+  transition: box-shadow 400ms, opacity 400ms; }
   .notatka:hover {
     box-shadow: 0 0px 11px rgba(0, 0, 0, 0.2);
     cursor: default; }
@@ -120,9 +125,15 @@ body,
     display: flex;
     justify-content: space-around;
     align-items: center;
-    overflow: hidden; }
+    overflow: hidden;
+    transition: opacity 400ms; }
   .notatka .btn {
     opacity: 0.5;
-    cursor: pointer; }
+    cursor: pointer;
+    display: flex;
+    align-content: center; }
     .notatka .btn:hover {
       opacity: 1; }
+    .notatka .btn svg {
+      width: 20px;
+      height: 20px; }

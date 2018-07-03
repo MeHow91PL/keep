@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
+import {composeWithDevTools} from 'redux-devtools-extension'
 import { Provider } from 'react-redux';
 import database from './app/Firebase';
 import registerServiceWorker from './registerServiceWorker';
@@ -9,6 +10,7 @@ import './index.css';
 import App from './App';
 import { NotatkaInputReducer } from './app/NotatkaInput/NotatkaInputReducer';
 import NotesList from './app/NotesList/NotesListReducer';
+import {NotatkaReducer} from './app/Notatka/NotatkaReducer';
 import { sidebarReducer } from './app/Sidebar/SidebarReducer';
 
 // export function getTasksThunk() {
@@ -27,11 +29,12 @@ import { sidebarReducer } from './app/Sidebar/SidebarReducer';
 const reducers = combineReducers(
     {
         NotatkaInput: NotatkaInputReducer,
+        Note: NotatkaReducer,
         NotesList,
         Sidebar: sidebarReducer
     })
 
-const store = createStore(reducers, applyMiddleware(thunkMiddleware))
+const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunkMiddleware)))
 
 ReactDOM.render(
     <Provider store={store}>

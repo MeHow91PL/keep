@@ -1,13 +1,14 @@
 import { connect } from 'react-redux'
-import NotatkaInput from './NotatkaInput'
-import { test } from './NotatkaActions'
+import Notatka from './Notatka'
+import {activeNote, deactiveNote} from './NotatkaActions'
 
 const mapStateToProps = (state, ownProps) => ({
-    test:state.NotatkaInput
+    note:state.Note
 })
 
 const mapDispatchToProps = {
-    click: test
+    activeNote,
+    deactiveNote
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NotatkaInput)
+export default connect(mapStateToProps, mapDispatchToProps)(Notatka)

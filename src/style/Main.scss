@@ -36,7 +36,11 @@ input {
 }
 
 .collapsed-w {
-    height: 0 !important;
+    width: 0 !important;
+}
+
+.invisible {
+    opacity: 0;
 }
 
 html,
@@ -123,6 +127,7 @@ body,
     margin: 10px;
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .notatka {
@@ -131,6 +136,7 @@ body,
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.20);
     margin: 5px;
     flex-basis: 240px;
+    transition: box-shadow 400ms, opacity 400ms;
     &:hover {
         box-shadow: 0 0px 11px rgba(0, 0, 0, 0.20);
         cursor: default;
@@ -147,12 +153,24 @@ body,
         justify-content: space-around;
         align-items: center;
         overflow: hidden;
+        transition: opacity 400ms;
     }
     .btn {
         opacity: 0.5;
         cursor: pointer;
+        display: flex;
+        align-content: center;
         &:hover {
             opacity: 1;
+        } // &:active:after {
+        //     content: 'AAAAAAAA';
+        //     position: absolute;
+        //     width: 100px;
+        //     height: 100px;
+        // }
+        svg {
+            width: 20px;
+            height: 20px;
         }
     }
 }

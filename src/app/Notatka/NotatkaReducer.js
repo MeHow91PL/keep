@@ -1,11 +1,11 @@
 export const NotatkaReducer = (
-    state = "", action) =>
-{
+    state = 0, action) => {
     switch (action.type) {
-        case 'POKAZ_PRZYCISKI':
-            return 
-             "";
-            default:
+        case 'ACTIVE_NOTE':
+            return action.payload;
+        case 'DEACTIVE_NOTE':
+            return 0;
+        default:
             return state;
     }
 }
