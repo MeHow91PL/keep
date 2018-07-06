@@ -10,11 +10,13 @@
     .dodajNotatke-input .tytul input {
       font-size: 1.1em;
       font-weight: bold; }
-  .dodajNotatke-input input {
+  .dodajNotatke-input input, .dodajNotatke-input textarea {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     outline: 0px solid transparent;
     border: none;
     width: 100%;
-    user-select: all; }
+    user-select: all;
+    background: transparent; }
   .dodajNotatke-input .buttons-cont {
     display: flex;
     margin: 10px 0 5px;

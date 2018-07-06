@@ -1,25 +1,25 @@
 import React from 'react';
+import { Transform } from 'stream';
 
-const Notatka = ({ id, tytul, tekst, activeNote, deactiveNote, isActive }) => {
-    console.log(isActive ? 'collapsed-h' : '');
+const Notatka = ({ id, tytul, tekst, activeNote, deactiveNote, isActive, showModal }) => {
 
     return (
         <div className="notatka"
-            onMouseEnter={() => {
-                activeNote(id);
-            }}
-
-
-            onMouseLeave={() => {
-                deactiveNote()
-            }}
+            onMouseEnter={() => activeNote(id)}
+            onMouseLeave={() => deactiveNote()}
+            onClick={() => showModal({
+                modalType: 'INFO_MODAL',
+                modalProps: {
+                    id: id
+                }
+            })}
 
         >
             <div
                 className={`tytul ${tytul.trim() === ''
                     ? 'hidden'
                     : ''}`}>{tytul}</div>
-            <div className="tresc">{tekst}</div>
+            <div className="tresc" contenteditable="false" dangerouslySetInnerHTML={{ __html: tekst }} />
             <div className={`buttons ${isActive ? '' : 'invisible'}`}>
 
                 <div className="przypomnij btn">

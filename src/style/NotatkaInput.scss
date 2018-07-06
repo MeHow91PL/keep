@@ -13,11 +13,13 @@
             font-weight: bold;
         }
     }
-    input {
+    input, textarea {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         outline: 0px solid transparent;
         border: none;
         width: 100%;
         user-select: all;
+        background: transparent;
     }
     .buttons-cont {
         display: flex;

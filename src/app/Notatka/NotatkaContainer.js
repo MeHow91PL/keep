@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Notatka from './Notatka'
-import {activeNote, deactiveNote} from './NotatkaActions'
+import {activeNote, deactiveNote,showModal} from './NotatkaActions'
 
 const mapStateToProps = (state, ownProps) => ({
     note:state.Note
@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = {
     activeNote,
-    deactiveNote
+    deactiveNote,
+    showModal
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Notatka)

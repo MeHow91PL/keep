@@ -11,3 +11,10 @@ export const fetchNotes = () => {
         })
     }
 }
+
+export const setSize = (payload) => {
+    return {
+        type: 'SET_SIZE',
+        payload
+    }
+}

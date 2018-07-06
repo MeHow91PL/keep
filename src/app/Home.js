@@ -6,6 +6,9 @@ import Sidebar from './Sidebar/SidebarContainer';
 import NotesList from './NotesList/NotesList';
 import { fetchNotes } from './NotesList/NotesActions'
 import { toggleSidebar } from './Sidebar/SidebarActions'
+import {setSize} from './NotesList/NotesActions'
+import Modal from './Modal/RootModal'
+
 
 class Home extends Component {
 
@@ -77,8 +80,9 @@ class Home extends Component {
 
                     <div className="content">
                         <NotatkaInput />
-                        <NotesList notes={this.props.notatki} activeNote={this.props.activeNote} />
+                        <NotesList setSize={this.props.setSize} notes={this.props.notatki} activeNote={this.props.activeNote} />
                     </div>
+                    <Modal />
                 </div>
             </div>
         )
@@ -87,7 +91,7 @@ class Home extends Component {
 
 const mapStateToProps = (state, ownProps) => (
     {
-        notatki: state.NotesList,
+        notatki: state.NotesList.Notes,
         sidebar: state.Sidebar,
         activeNote: state.Note
     }
@@ -95,7 +99,8 @@ const mapStateToProps = (state, ownProps) => (
 
 const mapDispatchToProps = {
     toggleSidebar,
-    getNotes: fetchNotes
+    getNotes: fetchNotes,
+    setSize
 }
 
 

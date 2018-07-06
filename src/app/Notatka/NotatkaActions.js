@@ -1,12 +1,20 @@
 export const test = (payload) => {
-    return ({type : 'TEST', payload})
+    return ({ type: 'TEST', payload })
 }
 
 export const activeNote = (id) => ({
     type: 'ACTIVE_NOTE',
-    payload:id
+    payload: id
 })
 
 export const deactiveNote = () => ({
     type: 'DEACTIVE_NOTE'
+})
+
+export const showModal = ({modalType, modalProps}) => ({
+    type: 'SHOW_MODAL',
+    payload: {
+        modalType,
+        modalProps
+    }
 })
