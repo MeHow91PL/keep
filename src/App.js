@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './style/Main.css';
 import './style/Sidebar.css';
 import './style/NotatkaInput.css';
+import './style/Modal.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './app/Home';
 
