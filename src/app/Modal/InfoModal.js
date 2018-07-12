@@ -1,23 +1,21 @@
 import React from 'react'
 
-const infoModal = ({ closeModal }) => {
-    console.log(this.closeModal);
+const infoModal = ({ hideModal, id, tytul, tekst }) => {
 
     return (
-        <div
-            className="modal-bg"
-        >
-            <div style={
-                {
-                    height: '400px',
-                    width: '250px',
-                    display: 'flex',
-                    scrollBehavior: 'unset',
-                    background: 'white',
-                    boxShadow: '0 0 10px rgba(0,0,0,0.8)'
-                }
-            }>
-                Info modal
+        <div className="modal-bg">
+            <div className="modal-dialog">
+                <div className="bar">
+                    <div className="btn" onClick={hideModal}>X</div>
+                </div>
+                <div className="content">
+                    <div className="tytul">{tytul}</div>
+                    <div className="tresc">{tekst}</div>
+                </div>
+                <div className="buttons-cont">
+                    <div className="btn" onClick={hideModal}>Zamknij</div>
+                </div>
+
             </div>
         </div>
     )

@@ -1,7 +1,6 @@
 import database from '../Firebase'
 
 export const fetchNotes = () => {
-
     return dispatch => {
         database.on('value', snapshot => {
             dispatch({

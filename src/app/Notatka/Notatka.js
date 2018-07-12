@@ -10,7 +10,7 @@ const Notatka = ({ id, tytul, tekst, activeNote, deactiveNote, isActive, showMod
             onClick={() => showModal({
                 modalType: 'INFO_MODAL',
                 modalProps: {
-                    id: id
+                    id, tytul, tekst
                 }
             })}
 

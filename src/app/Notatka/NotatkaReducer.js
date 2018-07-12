@@ -11,7 +11,9 @@ export const NotatkaReducer = (
         case 'DEACTIVE_NOTE':
             return { ...state, activeId: 0 };
         case 'SHOW_MODAL':
-        return { ...state, modal:action.payload };
+            return { ...state, modal: action.payload };
+        case 'HIDE_MODAL':
+            return { ...state, modal:initModal };
         default:
             return state;
     }
