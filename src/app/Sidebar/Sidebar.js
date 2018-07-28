@@ -4,7 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import { push } from 'connected-react-router'
 import '../paths'
-import { searchMain } from '../paths';
+import { noteMode, reminderMode, archiveMode, binMode } from '../paths';
 
 const checkSidebarDisplay = (showSidebar) => {
     if (showSidebar != null) {
@@ -20,27 +20,16 @@ const Sidebar = ({ showSidebar, toggleSidebar }) => {
             >
                 <div className={`sidebar-content`}>
                     <div>
-                        <div className="ikona">Ico</div>
-                        <div className="text">
-                            <Link to={searchMain}>
-                                SearchView
-                            </Link>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div className="ikona">Ico</div>
-                        <div className="text">Home</div>
-                    </div>  <div>
-                        <div className="ikona">Ico</div>
-                        <div className="text">Remove</div>
-                    </div>  <div>
-                        <div className="ikona">Ico</div>
-                        <div className="text">Notatki</div>
+                        <Link to={noteMode}>
+                            <div className="ikona">Ico</div>
+                            <div className="text">Notatki</div>
+                        </Link>
                     </div>
                     <div>
-                        <div className="ikona">Ico</div>
-                        <div className="text">Przypomnienia</div>
+                        <Link to={reminderMode}>
+                            <div className="ikona">Ico</div>
+                            <div className="text">Przypomnienia</div>
+                        </Link>
                     </div>
                     <hr />
                     <div>
@@ -65,12 +54,16 @@ const Sidebar = ({ showSidebar, toggleSidebar }) => {
                     </div>
                     <hr />
                     <div>
-                        <div className="ikona">Ico</div>
-                        <div className="text">Archiwum</div>
+                        <Link to={archiveMode}>
+                            <div className="ikona">Ico</div>
+                            <div className="text">Archiwum</div>
+                        </Link>
                     </div>
                     <div>
-                        <div className="ikona">Ico</div>
-                        <div className="text">Kosz</div>
+                        <Link to={binMode}>
+                            <div className="ikona">Ico</div>
+                            <div className="text">Kosz</div>
+                        </Link>
                     </div>
                     < hr />
                     <div>

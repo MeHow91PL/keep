@@ -13,12 +13,13 @@
     .sidebar .sidebar-content > div {
       display: flex;
       align-items: center;
-      cursor: pointer;
-      padding: 10px; }
+      cursor: pointer; }
       .sidebar .sidebar-content > div:hover {
         background: rgba(0, 0, 0, 0.3); }
       .sidebar .sidebar-content > div .text {
         padding: 0 10px; }
+      .sidebar .sidebar-content > div a {
+        padding: 10px; }
     .sidebar .sidebar-content hr {
       width: 100%;
       border-top: 1px solid rgba(0, 0, 0, 0.1); }

@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 
 //Routing
 import { ConnectedRouter, goBack } from 'connected-react-router'
-import {  Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 //Components
 import TopBar from './app/TopBar/TopBarComponent';
@@ -38,12 +38,12 @@ import { dispatch } from '../node_modules/rxjs/internal/observable/pairs';
 
 class App extends Component {
     render() {
-        const { toggleSidebar, sidebar, previousSite,history } = this.props;
+        const { toggleSidebar, sidebar, previousSite, history } = this.props;
         const mode = this.props.mode === "" ? "NoteMode" : this.props.mode;
 
         //Stała dla wygodniejszego przekazania do komponentu topbar
-        const topbarProps = { toggleSidebar, sidebar, mode,previousSite };
-        
+        const topbarProps = { toggleSidebar, sidebar, mode, previousSite };
+
         return (
             <ConnectedRouter history={history} >
                 <div>
@@ -77,12 +77,12 @@ const mapStateToProps = (state, ownProps) => ({
     mode: state.router.location.hash.slice(1)
 })
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = {
     toggleSidebar,
     getNotes: fetchNotes,
     setSize,
     setNotesPos,
-    previousSite: () => dispatch(goBack())
-})
+    previousSite: goBack
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

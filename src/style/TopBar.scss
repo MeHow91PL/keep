@@ -44,8 +44,8 @@
         user-select: none;
         border-radius: 50%;
         transition: background-color 200ms;
-            background: rgba(255, 255, 255, 0.3);
         &:hover {
+            background: rgba(255, 255, 255, 0.3);
         }
         &:active {
             background: rgba(255, 255, 255, 0.5);
@@ -53,14 +53,18 @@
         svg {
             width: 30px;
             height: 30px;
-            path{
+            path {
                 width: 100%;
-                }
+            }
         }
     }
 }
 
-.NoteMode {
+.NoteMode,
+.NoteMode,
+.ReminderMode,
+.ArchiveMode,
+.BinMode {
     .hamburger {
         display: flex;
     }
