@@ -1,0 +1,116 @@
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    background: #ffbb00;
+    .logo {
+        text-align: center;
+    }
+    .szukaj-cont {
+        display: flex;
+        align-items: center;
+        height: 70%;
+        width: 100%;
+        margin: 0 5%;
+        border-radius: 15px 15px 5px;
+        background: rgba(0, 0, 0, 0.05);
+        .szukaj-btn {
+            cursor: pointer;
+            opacity: 0.5;
+            padding: 4px 10px 0 12px;
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        input {
+            width: 100%;
+            border: 1px solid transparent;
+            background: transparent;
+            border-radius: 3px;
+            outline: 0px solid transparent;
+        }
+    }
+    .btn {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+        user-select: none;
+        border-radius: 50%;
+        transition: background-color 200ms;
+            background: rgba(255, 255, 255, 0.3);
+        &:hover {
+        }
+        &:active {
+            background: rgba(255, 255, 255, 0.5);
+        }
+        svg {
+            width: 30px;
+            height: 30px;
+            path{
+                width: 100%;
+                }
+        }
+    }
+}
+
+.NoteMode {
+    .hamburger {
+        display: flex;
+    }
+}
+
+.SearchMode {
+    .top-bar {
+        background: #3e50b3;
+        svg {
+            fill: white;
+        }
+        .logo {
+            color: white
+        }
+        .back {
+            display: flex;
+            transform: scale(0.8);
+        }
+        .szukaj-cont {
+            background: rgba(255, 255, 255, 0.1);
+            .szukaj-btn {
+                opacity: 1;
+                svg {}
+            }
+            input {
+                &::placeholder {
+                    color: white;
+                }
+            }
+        }
+        .btn {
+            opacity: 1;
+            &:hover {
+                opacity: 0.8;
+            }
+            svg {}
+        }
+    }
+    .notesModeContent {
+        display: none;
+    }
+    .searchModeContent {
+        display: flex;
+        opacity: 1;
+        flex-direction: column;
+        &>div {
+            animation: test 200ms linear;
+            animation-iteration-count: 1;
+            opacity: 1;
+            flex-basis: 50px;
+        }
+    }
+}

@@ -9,8 +9,6 @@ const MODAL_COMPONENTS = {
 
 const ModalRoot = ({ modal,hideModal,note }) => {
     const { modalType, modalProps } = modal;
-    console.log(note);
-    
     if (!modalType) {
         return null;
     }

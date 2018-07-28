@@ -1,4 +1,10 @@
+//React
 import React from 'react';
+//Routing
+import { Link } from 'react-router-dom';
+// import { push } from 'connected-react-router'
+import '../paths'
+import { searchMain } from '../paths';
 
 const checkSidebarDisplay = (showSidebar) => {
     if (showSidebar != null) {
@@ -15,7 +21,16 @@ const Sidebar = ({ showSidebar, toggleSidebar }) => {
                 <div className={`sidebar-content`}>
                     <div>
                         <div className="ikona">Ico</div>
-                        <div className="text">Add</div>
+                        <div className="text">
+                            <Link to={searchMain}>
+                                SearchView
+                            </Link>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div className="ikona">Ico</div>
+                        <div className="text">Home</div>
                     </div>  <div>
                         <div className="ikona">Ico</div>
                         <div className="text">Remove</div>

@@ -1,5 +1,5 @@
-import database from '../Firebase';
-import uuid from 'uuid/v4'
+// import database from '../Firebase';
+// import uuid from 'uuid/v4'
     // id: ++id, 
     //     tytul: action.payload.tytul, 
     //     tekst: action.payload.tekst 
@@ -7,13 +7,13 @@ import uuid from 'uuid/v4'
 export const dodajNotatke = (payload) => {
     // console.log(payload,"elo");
     
-    // return ({type : 'DODAJ_NOTATKE', payload})
+    return ({type : 'REQUEST_ADD_NOTICE_START', payload})
 
-    return dispatch => database.push({
-        id:uuid(), 
-        tytul: payload.tytul, 
-        tekst: payload.tekst 
-    });
+    // return dispatch => database.push({
+    //     id:uuid(), 
+    //     tytul: payload.tytul, 
+    //     tekst: payload.tekst 
+    // });
 
     // return dispatch => {
     //     database.on('value', snapshot =>{

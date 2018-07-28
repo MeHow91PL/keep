@@ -1,12 +1,10 @@
 import React from 'react';
-import { Transform } from 'stream';
 
-const Notatka = ({ id, tytul, tekst, activeNote, deactiveNote, isActive, showModal }) => {
+const Notatka = ({ id, title: tytul = '', body: tekst, activeNote, deactiveNote, isActive, showModal }) => {
 
     return (
-        <div className="notatka"
-            onMouseEnter={() => activeNote(id)}
-            onMouseLeave={() => deactiveNote()}
+        <div className={`notatka ${isActive ? 'active' : ''}`}
+           
             onClick={() => showModal({
                 modalType: 'INFO_MODAL',
                 modalProps: {
@@ -20,7 +18,7 @@ const Notatka = ({ id, tytul, tekst, activeNote, deactiveNote, isActive, showMod
                     ? 'hidden'
                     : ''}`}>{tytul}</div>
             <div className="tresc" contenteditable="false" dangerouslySetInnerHTML={{ __html: tekst }} />
-            <div className={`buttons ${isActive ? '' : 'invisible'}`}>
+            <div className={`buttons`}>
 
                 <div className="przypomnij btn">
                     <svg

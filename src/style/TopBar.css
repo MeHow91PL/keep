@@ -1,0 +1,85 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  background: #ffbb00; }
+  .top-bar .logo {
+    text-align: center; }
+  .top-bar .szukaj-cont {
+    display: flex;
+    align-items: center;
+    height: 70%;
+    width: 100%;
+    margin: 0 5%;
+    border-radius: 15px 15px 5px;
+    background: rgba(0, 0, 0, 0.05); }
+    .top-bar .szukaj-cont .szukaj-btn {
+      cursor: pointer;
+      opacity: 0.5;
+      padding: 4px 10px 0 12px; }
+      .top-bar .szukaj-cont .szukaj-btn svg {
+        width: 30px;
+        height: 30px; }
+    .top-bar .szukaj-cont input {
+      width: 100%;
+      border: 1px solid transparent;
+      background: transparent;
+      border-radius: 3px;
+      outline: 0px solid transparent; }
+  .top-bar .btn {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 50%;
+    transition: background-color 200ms;
+    background: rgba(255, 255, 255, 0.3); }
+    .top-bar .btn:active {
+      background: rgba(255, 255, 255, 0.5); }
+    .top-bar .btn svg {
+      width: 30px;
+      height: 30px; }
+      .top-bar .btn svg path {
+        width: 100%; }
+
+.NoteMode .hamburger {
+  display: flex; }
+
+.SearchMode .top-bar {
+  background: #3e50b3; }
+  .SearchMode .top-bar svg {
+    fill: white; }
+  .SearchMode .top-bar .logo {
+    color: white; }
+  .SearchMode .top-bar .back {
+    display: flex;
+    transform: scale(0.8); }
+  .SearchMode .top-bar .szukaj-cont {
+    background: rgba(255, 255, 255, 0.1); }
+    .SearchMode .top-bar .szukaj-cont .szukaj-btn {
+      opacity: 1; }
+    .SearchMode .top-bar .szukaj-cont input::placeholder {
+      color: white; }
+  .SearchMode .top-bar .btn {
+    opacity: 1; }
+    .SearchMode .top-bar .btn:hover {
+      opacity: 0.8; }
+
+.SearchMode .notesModeContent {
+  display: none; }
+
+.SearchMode .searchModeContent {
+  display: flex;
+  opacity: 1;
+  flex-direction: column; }
+  .SearchMode .searchModeContent > div {
+    animation: test 200ms linear;
+    animation-iteration-count: 1;
+    opacity: 1;
+    flex-basis: 50px; }

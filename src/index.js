@@ -1,18 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import thunkMiddleware from 'redux-thunk';
-import {composeWithDevTools} from 'redux-devtools-extension'
 import { Provider } from 'react-redux';
-import database from './app/Firebase';
 import registerServiceWorker from './registerServiceWorker';
-import './index.css';
+import { composeWithDevTools } from 'redux-devtools-extension'
+
+//Components
 import App from './App';
+
+//Reducers
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { NotatkaInputReducer } from './app/NotatkaInput/NotatkaInputReducer';
 import NotesList from './app/NotesList/NotesListReducer';
-import {NotatkaReducer} from './app/Notatka/NotatkaReducer';
+import { NotatkaReducer } from './app/Notatka/NotatkaReducer';
 import { sidebarReducer } from './app/Sidebar/SidebarReducer';
 
+//Routing
+import { createBrowserHistory } from 'history'
+import { connectRouter, routerMiddleware } from 'connected-react-router'
+
+//RxJS
+import EpicsRoot from './app/Epic/EpicRoot'
+import { createEpicMiddleware } from 'redux-observable'
+
+import './index.css';
 // export function getTasksThunk() {
 //     return dispatch => {
 //         const tasks = [];
@@ -25,6 +35,8 @@ import { sidebarReducer } from './app/Sidebar/SidebarReducer';
 //             .then(() => dispatch(getTasks(tasks)))
 //     }
 // }
+const history = createBrowserHistory();
+const epicMiddleware = createEpicMiddleware();
 
 const reducers = combineReducers(
     {
@@ -34,10 +46,19 @@ const reducers = combineReducers(
         Sidebar: sidebarReducer
     })
 
-const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunkMiddleware)))
+const store = createStore(connectRouter(history)(reducers),
+    composeWithDevTools(
+        applyMiddleware(
+            epicMiddleware,
+            routerMiddleware(history)
+        )
+    )
+)
+
+epicMiddleware.run(EpicsRoot)
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+            <App history={history} />
     </Provider>, document.getElementById('root'));
 registerServiceWorker();

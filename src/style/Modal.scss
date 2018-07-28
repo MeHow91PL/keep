@@ -21,6 +21,15 @@ $btnsH: 60px;
     scroll-behavior: unset;
     background: white;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    animation: ease-out 200ms dialogShow;
+    @keyframes dialogShow {
+        from {
+            transform: scale(0)
+        }
+        to {
+            transform: scale(1)
+        }
+    }
     .btn {
         cursor: pointer;
         display: flex;
@@ -46,6 +55,15 @@ $btnsH: 60px;
     .content {
         height: calc(100% - #{$barH + $btnsH});
         padding: 10px;
+        animation: ease-out 500ms content-show;
+        @keyframes content-show {
+            from {
+                opacity: 0
+            }
+            to {
+                opacity: 1
+            }
+        }
         .tytul {
             font-weight: 600;
         }
