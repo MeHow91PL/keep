@@ -1,6 +1,12 @@
-import _ from 'lodash'
-import Notatka from '../Notatka/NotatkaContainer'
+//React
 import React, { Component } from 'react'
+
+//Others
+import _ from 'lodash'
+import PropTypes from 'prop-types';
+
+//Components
+import Notatka from '../Notatka/NotatkaContainer'
 // import Grid, { WidthProvider } from 'react-grid-layout'
 
 
@@ -93,6 +99,10 @@ class NotesList extends Component {
             </div>
         )
     }
+}
+
+NotesList.propTypes ={
+    notes: PropTypes.array.isRequired
 }
 
 export default NotesList

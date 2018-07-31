@@ -1,3 +1,5 @@
+import { FETCH_NOTES_REQUEST_START, SET_SIZE, SET_NOTES_POS } from "../actions";
+
 // import database from '../Firebase'
 
 export const fetchNotes = () => {
@@ -12,18 +14,18 @@ export const fetchNotes = () => {
     // }
    
     return {
-        type: 'FETCH_NOTES_REQUEST_START',
+        type: FETCH_NOTES_REQUEST_START,
     }
 }
 
 export const setSize = (payload) => {
     return {
-        type: 'SET_SIZE',
+        type: SET_SIZE,
         payload
     }
 }
 
 export const setNotesPos = (payload) => ({
-    type: 'SET_NOTES_POS',
+    type: SET_NOTES_POS,
     payload
 })

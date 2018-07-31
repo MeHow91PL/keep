@@ -28,13 +28,11 @@ import './style/TopBar.css';
 import './style/Sidebar.css';
 import './style/NotatkaInput.css';
 import './style/Modal.css';
-import '../node_modules/react-grid-layout/css/styles.css';
-import '../node_modules/react-resizable/css/styles.css';
 
 
 
 import Home from './app/Home';
-import { dispatch } from '../node_modules/rxjs/internal/observable/pairs';
+import { dispatch } from 'rxjs/internal/observable/pairs';
 
 class App extends Component {
     render() {
@@ -43,7 +41,6 @@ class App extends Component {
 
         //Stała dla wygodniejszego przekazania do komponentu topbar
         const topbarProps = { toggleSidebar, sidebar, mode, previousSite };
-
         return (
             <ConnectedRouter history={history} >
                 <div>
@@ -74,7 +71,7 @@ const mapStateToProps = (state, ownProps) => ({
     notatki: state.NotesList,
     sidebar: state.Sidebar,
     activeNote: state.Note.activeId,
-    mode: state.router.location.hash.slice(1)
+    mode: state.router.location.pathname.replace(/\//g,'')
 })
 
 const mapDispatchToProps = {

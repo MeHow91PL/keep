@@ -17,7 +17,7 @@ const Notatka = ({ id, title: tytul = '', body: tekst, activeNote, deactiveNote,
                 className={`tytul ${tytul.trim() === ''
                     ? 'hidden'
                     : ''}`}>{tytul}</div>
-            <div className="tresc" contenteditable="false" dangerouslySetInnerHTML={{ __html: tekst }} />
+            <div className="tresc" dangerouslySetInnerHTML={{ __html: tekst }} />
             <div className={`buttons`}>
 
                 <div className="przypomnij btn">

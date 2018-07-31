@@ -3,7 +3,7 @@ import React from 'react'
 const infoModal = ({ hideModal, id, tytul, tekst }) => {
 
     return (
-        <div className="modal-bg">
+        <div className="modal-bg" onClick={hideModal}>
             <div className="modal-dialog">
                 <div className="bar">
                     <div className="btn" onClick={hideModal}>X</div>

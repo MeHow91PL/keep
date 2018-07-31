@@ -13,6 +13,7 @@ import { NotatkaInputReducer } from './app/NotatkaInput/NotatkaInputReducer';
 import NotesList from './app/NotesList/NotesListReducer';
 import { NotatkaReducer } from './app/Notatka/NotatkaReducer';
 import { sidebarReducer } from './app/Sidebar/SidebarReducer';
+import { searchReducer } from './app/SearchView/SearchReducer';
 
 //Routing
 import { createBrowserHistory } from 'history'
@@ -43,7 +44,8 @@ const reducers = combineReducers(
         NotatkaInput: NotatkaInputReducer,
         Note: NotatkaReducer,
         NotesList,
-        Sidebar: sidebarReducer
+        Sidebar: sidebarReducer,
+        SearchMode: searchReducer
     })
 
 const store = createStore(connectRouter(history)(reducers),

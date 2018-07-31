@@ -6,10 +6,13 @@ import { push } from 'connected-react-router';
 import '../paths'
 import { searchMain } from '../paths';
 
+//Actions
+import { setPaceholder, setSearchFilter } from './SearchActions';
+
 
 class SearchInput extends Component {
     render() {
-        const { setSerchMode } = this.props;
+        const { setSerchMode, placeholder } = this.props;
         return (
             <div className="szukaj-cont">
                 <div className="szukaj-btn">
@@ -26,7 +29,7 @@ class SearchInput extends Component {
                     type="text"
                     name="wyszukiwarka"
                     id="wyszukiwarka"
-                    placeholder="Szukaj..."
+                    placeholder={placeholder}
                     onFocus={setSerchMode}
                 />
             </div>
@@ -35,7 +38,7 @@ class SearchInput extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-
+    placeholder: state.SearchMode.inputPlaceholder.concat('...')
 
 })
 

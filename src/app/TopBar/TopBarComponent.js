@@ -5,8 +5,6 @@ import React from 'react'
 import SearchInput from '../SearchInput/SearchComponent';
 
 const TopBar = ({ toggleSidebar, previousSite }) => {
-    console.log(toggleSidebar);
-    
     return (
         <div className={`top-bar`} >
                 <div className="hamburger btn" onClick={toggleSidebar}>

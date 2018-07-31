@@ -1,3 +1,5 @@
+import { REQUEST_ADD_NOTICE_START, ZMIEN_TEKST, ROZWIN_NOTKE, ZWIN_NOTKE } from '../actions';
+
 // import database from '../Firebase';
 // import uuid from 'uuid/v4'
     // id: ++id, 
@@ -7,7 +9,7 @@
 export const dodajNotatke = (payload) => {
     // console.log(payload,"elo");
     
-    return ({type : 'REQUEST_ADD_NOTICE_START', payload})
+    return ({type : REQUEST_ADD_NOTICE_START, payload})
 
     // return dispatch => database.push({
     //     id:uuid(), 
@@ -23,13 +25,13 @@ export const dodajNotatke = (payload) => {
 }
 
 export const zmienTekst = (payload) => {
-    return ({type : 'ZMIEN_TEKST', payload})
+    return ({type : ZMIEN_TEKST, payload})
 }
 
 export const rozwinNotke = () => {
-    return ({type : 'ROZWIN_NOTKE', })
+    return ({type : ROZWIN_NOTKE, })
 }
 
 export const zwinNotke = () => {
-    return ({type : 'ZWIN_NOTKE'})
+    return ({type : ZWIN_NOTKE})
 }

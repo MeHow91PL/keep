@@ -56,34 +56,34 @@
 .BinMode .hamburger {
   display: flex; }
 
-.SearchMode .top-bar {
+.Search .top-bar {
   background: #3e50b3; }
-  .SearchMode .top-bar svg {
+  .Search .top-bar svg {
     fill: white; }
-  .SearchMode .top-bar .logo {
+  .Search .top-bar .logo {
     color: white; }
-  .SearchMode .top-bar .back {
+  .Search .top-bar .back {
     display: flex;
     transform: scale(0.8); }
-  .SearchMode .top-bar .szukaj-cont {
+  .Search .top-bar .szukaj-cont {
     background: rgba(255, 255, 255, 0.1); }
-    .SearchMode .top-bar .szukaj-cont .szukaj-btn {
+    .Search .top-bar .szukaj-cont .szukaj-btn {
       opacity: 1; }
-    .SearchMode .top-bar .szukaj-cont input::placeholder {
+    .Search .top-bar .szukaj-cont input::placeholder {
       color: white; }
-  .SearchMode .top-bar .btn {
+  .Search .top-bar .btn {
     opacity: 1; }
-    .SearchMode .top-bar .btn:hover {
+    .Search .top-bar .btn:hover {
       opacity: 0.8; }
 
-.SearchMode .notesModeContent {
+.Search .notesModeContent {
   display: none; }
 
-.SearchMode .searchModeContent {
+.Search .searchContent {
   display: flex;
   opacity: 1;
   flex-direction: column; }
-  .SearchMode .searchModeContent > div {
+  .Search .searchContent > div {
     animation: test 200ms linear;
     animation-iteration-count: 1;
     opacity: 1;

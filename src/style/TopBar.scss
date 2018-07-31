@@ -70,7 +70,7 @@
     }
 }
 
-.SearchMode {
+.Search {
     .top-bar {
         background: #3e50b3;
         svg {
@@ -106,7 +106,7 @@
     .notesModeContent {
         display: none;
     }
-    .searchModeContent {
+    .searchContent {
         display: flex;
         opacity: 1;
         flex-direction: column;
