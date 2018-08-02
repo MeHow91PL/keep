@@ -1,9 +1,17 @@
 {
+<<<<<<< HEAD
   "short_name": "React App",
   "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
+=======
+  "short_name": "Mehow Keep",
+  "name": "Mehow Keep",
+  "icons": [
+    {
+      "src": "keep.ico",
+>>>>>>> f78095709e10ad46209d28d8e3321eb28824fed6
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
