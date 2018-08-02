@@ -73,7 +73,11 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "test": "node scripts/test.js --env=jsdom",
     "predeploy": "npm run build",
+<<<<<<< HEAD
     "deploy": "gh-pages -b master -d build"
+=======
+    "deploy": "gh-pages -d build"
+>>>>>>> 9c9253b564e652aaba1db905e15537cdef61868f
   },
   "jest": {
     "collectCoverageFrom": [
