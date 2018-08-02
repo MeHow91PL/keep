@@ -1,12 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-<<<<<<< HEAD
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-
-ReactDOM.render(<App />, document.getElementById('root'));
-=======
 import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 import { composeWithDevTools } from 'redux-devtools-extension'
@@ -70,5 +63,4 @@ ReactDOM.render(
     <Provider store={store}>
             <App history={history} />
     </Provider>, document.getElementById('root'));
->>>>>>> f78095709e10ad46209d28d8e3321eb28824fed6
 registerServiceWorker();

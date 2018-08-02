@@ -3,18 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
-=======
     "@types/react": "^16.4.7",
     "@types/react-dom": "^16.0.6",
     "autoprefixer": "7.1.6",
@@ -133,5 +121,4 @@
     "redux-devtools-extension": "^2.13.5"
   },
   "homepage": "https://mehow91pl.github.io/keep"
->>>>>>> f78095709e10ad46209d28d8e3321eb28824fed6
 }

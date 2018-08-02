@@ -8,8 +8,6 @@
 
 # production
 /build
-<<<<<<< HEAD
-=======
 /config
 /node-modules
 /.vscode
@@ -17,7 +15,6 @@
 
 package.json
 package-lock.json
->>>>>>> f78095709e10ad46209d28d8e3321eb28824fed6
 
 # misc
 .DS_Store
