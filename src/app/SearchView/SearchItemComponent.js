@@ -9,10 +9,24 @@ import { Link } from 'react-router-dom';
 
 
 
-function SearchItem({ Title, Children,setSearchFilter }) {
+function SearchItem({ Title, Children, setSearchFilter }) {
     return (
         <div className="SearchItem">
             <div className="title">{Title}</div>
+            <div>
+                {
+                    Children.map(child => (
+                        <div key={child.Name} className={child.ClassName} >
+                            <Link to={child.Link}  >
+                                <child.Img />
+                                <div className={`{$}-name`}>{child.Name}</div>
+                            </Link>
+                        </div>
+                    )
+                    )
+                }
+            </div>
+            {/*
             <div>
                 {
                     Children.map(child => (
@@ -27,20 +41,6 @@ function SearchItem({ Title, Children,setSearchFilter }) {
                 }
             </div>
 
-            {/*
-            <div>
-                {
-                    Children.map(child => (
-                        <div key={child.Name} className={child.ClassName} >
-                            <Link to={child.Link}  >
-                                <child.Img />
-                                <div className={`{$}-name`}>{child.Name}</div>
-                            </Link>
-                        </div>
-                    )
-                    )
-                }
-            </div>
             */}
         </div>
     )

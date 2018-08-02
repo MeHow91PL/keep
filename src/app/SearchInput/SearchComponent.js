@@ -7,14 +7,27 @@ import '../paths'
 import { searchMain } from '../paths';
 
 //Actions
-import { setPaceholder, setSearchFilter } from './SearchActions';
+import { setPaceholder, setSearchFilter, activateSearchInput, deactivateSearchInput } from './SearchActions';
 
 
 class SearchInput extends Component {
     render() {
-        const { setSerchMode, placeholder } = this.props;
+        const { placeholder, isActive,
+            setSerchMode, activateSearchInput, deactivateSearchInput,urlPath } = this.props;
+
+        //func for pure html 
+        const onFocus = () => {
+            activateSearchInput();
+            //Execute only adres is not /Search
+            if (!urlPath.includes('/Search')) {
+                setSerchMode('/Search');
+            }
+        }
+
         return (
-            <div className="szukaj-cont">
+            <div
+                className={`szukaj-cont ${isActive ? 'active' : ''}`}
+            >
                 <div className="szukaj-btn">
                     <svg
                         focusable="false"
@@ -30,7 +43,8 @@ class SearchInput extends Component {
                     name="wyszukiwarka"
                     id="wyszukiwarka"
                     placeholder={placeholder}
-                    onFocus={setSerchMode}
+                    onFocus={onFocus}
+                    onBlur={deactivateSearchInput}
                 />
             </div>
         )
@@ -38,23 +52,19 @@ class SearchInput extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    placeholder: state.SearchMode.inputPlaceholder.concat('...')
-
+    placeholder: state.SearchMode.inputPlaceholder.concat('...'),
+    isActive: state.SearchMode.inputIsActive,
+    urlPath: state.router.location.pathname
 })
 
-const mapDispatchToProps = dispatch => {
-    return {
-        setSerchMode: () => {
-        dispatch(push(searchMain))
-      }
-    };
-  };
 
-// const mapDispatchToProps = {
-//     setSerchMode: () => {
-//         push('/Search')
-//     }
-// }
+
+const mapDispatchToProps = {
+    activateSearchInput,
+    deactivateSearchInput,
+    setSerchMode: push
+
+}
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchInput)

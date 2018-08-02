@@ -66,11 +66,25 @@
     display: flex;
     transform: scale(0.8); }
   .Search .top-bar .szukaj-cont {
-    background: rgba(255, 255, 255, 0.1); }
+    background: rgba(255, 255, 255, 0.1);
+    transition: 300ms; }
     .Search .top-bar .szukaj-cont .szukaj-btn {
       opacity: 1; }
-    .Search .top-bar .szukaj-cont input::placeholder {
+    .Search .top-bar .szukaj-cont input {
       color: white; }
+      .Search .top-bar .szukaj-cont input::placeholder {
+        color: white; }
+    .Search .top-bar .szukaj-cont.active {
+      background: white;
+      box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.5); }
+      .Search .top-bar .szukaj-cont.active .szukaj-btn {
+        opacity: 1; }
+        .Search .top-bar .szukaj-cont.active .szukaj-btn svg {
+          fill: grey; }
+      .Search .top-bar .szukaj-cont.active input {
+        color: initial; }
+        .Search .top-bar .szukaj-cont.active input::placeholder {
+          color: grey; }
   .Search .top-bar .btn {
     opacity: 1; }
     .Search .top-bar .btn:hover {

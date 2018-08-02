@@ -101,8 +101,13 @@ class NotesList extends Component {
     }
 }
 
+//PropTypes dla testów
 NotesList.propTypes ={
-    notes: PropTypes.array.isRequired
+    notes: PropTypes.objectOf(PropTypes.exact({
+        id: PropTypes.number,
+        title: PropTypes.string,
+        body: PropTypes.string
+    }))
 }
 
 export default NotesList

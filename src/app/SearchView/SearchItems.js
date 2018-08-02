@@ -13,7 +13,7 @@ export const TypeItem = {
         Img: UrlIco,
         Link: urlsFilter,
         ClassName: 'TypeItem',
-        FilterName: FilterTypes.TYPES
+        FilterName: FilterTypes.TYPES_FILTER
     }]
 }
 

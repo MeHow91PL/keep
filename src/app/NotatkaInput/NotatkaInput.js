@@ -26,7 +26,7 @@ const NotatkaInput = ({ nowaNotka, dodajNotatke, zmienTekst, rozwinNotke, zwinNo
                         name="nowaNotatkaTekst"
                         id="nowaNotatkaTekst"
                         placeholder="Utwórz notatke..."
-                        // contentEditable="true"
+                        contentEditable="true"
                         onKeyUpCapture={(e) => zmienTekst({
                             ...nowaNotka,
                             tekst: e.target.innerHTML
