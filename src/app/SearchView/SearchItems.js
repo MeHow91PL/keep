@@ -13,14 +13,14 @@ export const TypeItem = {
         Img: UrlIco,
         Link: urlsFilter,
         ClassName: 'TypeItem',
-        FilterName: FilterTypes.TYPES
+        FilterName: FilterTypes.TYPES_FILTER
     }]
 }
 
 export const LabelItem = {
     Title: 'Etykiety',
     Children: [{
-        Name: 'URL-e',
+        Name: 'Labels',
         Img: LabelIco,
         Link: labelsFilter,
         ClassName: 'LabelItem',

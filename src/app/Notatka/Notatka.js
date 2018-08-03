@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Notatka = ({ id, title: tytul = '', body: tekst, activeNote, deactiveNote, isActive, showModal }) => {
+const Notatka = ({ id, tytul = '', tekst, activeNote, deactiveNote, isActive, showModal }) => {
 
     return (
         <div className={`notatka ${isActive ? 'active' : ''}`}

@@ -7,18 +7,18 @@ import { ajax } from 'rxjs/ajax';
 const fetchNotes = action$ => action$.pipe(
     ofType('FETCH_NOTES_REQUEST_START'),
     mergeMap(action =>
-        ajax.getJSON(`https://jsonplaceholder.typicode.com/posts`).pipe(
-            map(
-                response => ({ type: 'FETCH_NOTES_REQUEST_DONE', payload: response })
-            )
-            // Observable.create(observer =>{
-            //     database.on('value', snap=>{
-            //         observer.next({type:'FETCH_NOTES_REQUEST_DONE', payload:snap.val()})
-            //     })
-            // })
-        )
+        // ajax.getJSON(`https://jsonplaceholder.typicode.com/posts`).pipe(
+        //     map(
+        //         response => ({ type: 'FETCH_NOTES_REQUEST_DONE', payload: response })
+        //     )
+        Observable.create(observer => {
+            database.on('value', snap => {
+                observer.next({ type: 'FETCH_NOTES_REQUEST_DONE', payload: snap.val() })
+            })
+        })
     )
 )
+// )
 
 const test = action$ => action$.pipe(
     ofType('ACTIVE_NOTE'),

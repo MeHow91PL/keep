@@ -8,7 +8,7 @@ const infoModal = ({ hideModal, id, tytul, tekst }) => {
                 <div className="bar">
                     <div className="btn" onClick={hideModal}>X</div>
                 </div>
-                <div className="content">
+                <div className="content" onClick={(e)=>{e.stopPropagation()}}>
                     <div className="tytul">{tytul}</div>
                     <div className="tresc">{tekst}</div>
                 </div>

@@ -13,7 +13,7 @@ function SearchItem({ Title, Children,setSearchFilter }) {
     return (
         <div className="SearchItem">
             <div className="title">{Title}</div>
-            <div>
+            {/* <div>
                 {
                     Children.map(child => (
                         <div key={child.Name} className={child.ClassName} onClick={()=>setSearchFilter(child.FilterName)} >
@@ -25,14 +25,14 @@ function SearchItem({ Title, Children,setSearchFilter }) {
                     )
                     )
                 }
-            </div>
+            </div> */}
 
-            {/*
+            
             <div>
                 {
                     Children.map(child => (
-                        <div key={child.Name} className={child.ClassName} >
-                            <Link to={child.Link}  >
+                        <div key={child.Name} className={child.ClassName} onClick={()=>setSearchFilter(child.FilterName)} >
+                            <Link to={child.Link}   >
                                 <child.Img />
                                 <div className={`{$}-name`}>{child.Name}</div>
                             </Link>
@@ -41,7 +41,7 @@ function SearchItem({ Title, Children,setSearchFilter }) {
                     )
                 }
             </div>
-            */}
+           
         </div>
     )
 }

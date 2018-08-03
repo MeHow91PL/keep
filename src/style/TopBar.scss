@@ -4,6 +4,7 @@
     justify-content: space-between;
     height: 60px;
     background: #ffbb00;
+    box-sizing: border-box;
     .logo {
         text-align: center;
     }
@@ -33,7 +34,6 @@
         }
     }
     .btn {
-        display: none;
         justify-content: center;
         align-items: center;
         width: 30px;
@@ -58,13 +58,9 @@
             }
         }
     }
-}
-
-.NoteMode,
-.NoteMode,
-.ReminderMode,
-.ArchiveMode,
-.BinMode {
+    .nav-btn{
+        display: none;
+    }
     .hamburger {
         display: flex;
     }
@@ -75,6 +71,9 @@
         background: #3e50b3;
         svg {
             fill: white;
+        }
+        .hamburger {
+            display: none;
         }
         .logo {
             color: white
@@ -87,11 +86,24 @@
             background: rgba(255, 255, 255, 0.1);
             .szukaj-btn {
                 opacity: 1;
-                svg {}
             }
             input {
                 &::placeholder {
                     color: white;
+                }
+            }
+            &.active {
+                background: azure;
+                color: rgba(0, 0, 0, 0.5);
+                box-shadow: inset 0 0 4px -2px rgba(0, 0, 0, 1);
+                border: 1px solid rgba(0, 0, 0, 0.6);
+                input {
+                    &::placeholder {
+                        color: rgba(0, 0, 0, 0.5);
+                    }
+                }
+                svg {
+                    fill: rgba(0, 0, 0, 0.5);
                 }
             }
         }

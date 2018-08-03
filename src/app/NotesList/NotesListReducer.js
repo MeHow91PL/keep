@@ -1,5 +1,5 @@
 const initState ={
-    Notes:[],
+    Notes:{},
     Container:{
         Height: 0,
         Width: 0

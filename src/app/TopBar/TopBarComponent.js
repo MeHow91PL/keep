@@ -7,19 +7,19 @@ import SearchInput from '../SearchInput/SearchComponent';
 const TopBar = ({ toggleSidebar, previousSite }) => {
     return (
         <div className={`top-bar`} >
-                <div className="hamburger btn" onClick={toggleSidebar}>
+                <div className="btn nav-btn hamburger" onClick={toggleSidebar}>
                     <svg viewBox="0 0 24 24">
                         <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
                     </svg>
                 </div>
-                <div className="back btn" onClick={previousSite}>
+                <div className="btn nav-btn back" onClick={previousSite}>
                     <svg viewBox="0 0 31.494 31.494">
                         <path  d="M10.273,5.009c0.444-0.444,1.143-0.444,1.587,0c0.429,0.429,0.429,1.143,0,1.571l-8.047,8.047h26.554
                             c0.619,0,1.127,0.492,1.127,1.111c0,0.619-0.508,1.127-1.127,1.127H3.813l8.047,8.032c0.429,0.444,0.429,1.159,0,1.587
                             c-0.444,0.444-1.143,0.444-1.587,0l-9.952-9.952c-0.429-0.429-0.429-1.143,0-1.571L10.273,5.009z"/>
                     </svg>
                 </div>
-                <div className="cancel btn">
+                <div className="btn nav-btn cancel">
                     <svg viewBox="0 0 249.499 249.499">
                         <path d="M7.079,214.851l25.905,26.276c9.536,9.674,25.106,9.782,34.777,0.252l56.559-55.761l55.739,56.548
                         c9.542,9.674,25.112,9.782,34.78,0.246l26.265-25.887c9.674-9.536,9.788-25.106,0.246-34.786l-55.742-56.547l56.565-55.754
