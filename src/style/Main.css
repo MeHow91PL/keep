@@ -1,6 +1,5 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: rgba(0, 0, 0, 0.87); }
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
 *::placeholder {
   color: rgba(0, 0, 0, 0.5); }

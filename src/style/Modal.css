@@ -10,7 +10,8 @@
   overflow: hidden;
   pointer-events: all;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  z-index: 1; }
 
 .modal-dialog {
   height: 400px;

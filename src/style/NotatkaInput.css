@@ -3,20 +3,31 @@
   margin: 30px auto 10px;
   padding: 0px 20px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  max-width: 600px; }
+  max-width: 600px;
+  position: relative; }
   .dodajNotatke-input .tytul {
     width: 100%;
     padding: 20px 0 10px; }
     .dodajNotatke-input .tytul input {
       font-size: 1.1em;
-      font-weight: bold; }
-  .dodajNotatke-input input, .dodajNotatke-input textarea {
+      font-weight: bold;
+      color: #909090; }
+  .dodajNotatke-input input,
+  .dodajNotatke-input textarea {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     outline: 0px solid transparent;
     border: none;
     width: 100%;
     user-select: all;
     background: transparent; }
+    .dodajNotatke-input input::placeholder,
+    .dodajNotatke-input textarea::placeholder {
+      color: #909090; }
+  .dodajNotatke-input [contenteditable=true]:empty:before {
+    content: attr(placeholder);
+    display: block;
+    /* For Firefox */
+    color: #909090; }
   .dodajNotatke-input .buttons-cont {
     display: flex;
     margin: 10px 0 5px;

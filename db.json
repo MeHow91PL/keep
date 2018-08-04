@@ -1,0 +1,27 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "tytul": "json-server",
+      "tekst": "typicode"
+    },
+    {
+      "tytul": "Tytuł",
+      "tekst": "Notatka",
+      "aktywny": true,
+      "id": 2
+    },
+    {
+      "tytul": "tytuł 2",
+      "tekst": "<div>Długa</div><div>Notatka<br></div>",
+      "aktywny": true,
+      "id": 3
+    },
+    {
+      "tytul": "fsdlkfnksdf",
+      "tekst": "sdfknsdlkfnksdf",
+      "aktywny": true,
+      "id": 4
+    }
+  ]
+}

@@ -8,9 +8,10 @@ const infoModal = ({ hideModal, id, tytul, tekst }) => {
                 <div className="bar">
                     <div className="btn" onClick={hideModal}>X</div>
                 </div>
-                <div className="content" onClick={(e)=>{e.stopPropagation()}}>
+                <div className="content" onClick={(e) => { e.stopPropagation() }}
+                >
                     <div className="tytul">{tytul}</div>
-                    <div className="tresc">{tekst}</div>
+                    <div className="tresc" dangerouslySetInnerHTML={{ __html: tekst }} />
                 </div>
                 <div className="buttons-cont">
                     <div className="btn" onClick={hideModal}>Zamknij</div>

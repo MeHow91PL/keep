@@ -30,7 +30,7 @@ class NotesList extends Component {
 }
 
 NotesList.propTypes ={
-    notes: PropTypes.object.isRequired
+    notes: PropTypes.array.isRequired
 }
 
 export default NotesList

@@ -9,7 +9,10 @@ import { REQUEST_ADD_NOTICE_START, ZMIEN_TEKST, ROZWIN_NOTKE, ZWIN_NOTKE } from 
 export const dodajNotatke = (payload) => {
     // console.log(payload,"elo");
     
-    return ({type : REQUEST_ADD_NOTICE_START, payload})
+    return {
+        type : REQUEST_ADD_NOTICE_START,
+        payload
+    }
 
     // return dispatch => database.push({
     //     id:uuid(), 

@@ -3,24 +3,37 @@
     background: $brudnyBialy;
     margin: 30px auto 10px;
     padding: 0px 20px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.20);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.20);
     max-width: 600px;
+    position: relative;
     .tytul {
         width: 100%;
         padding: 20px 0 10px;
         input {
             font-size: 1.1em;
             font-weight: bold;
+            color: $placeholder-color-grey
         }
     }
-    input, textarea {
+    input,
+    textarea {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         outline: 0px solid transparent;
         border: none;
         width: 100%;
         user-select: all;
         background: transparent;
+        &::placeholder {
+            color: $placeholder-color-grey
+        }
     }
+    [contenteditable=true]:empty:before {
+        content: attr(placeholder);
+        display: block;
+        /* For Firefox */
+        color: $placeholder-color-grey
+    }
+    div[contenteditable=true] {}
     .buttons-cont {
         display: flex;
         margin: 10px 0 5px;
