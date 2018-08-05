@@ -1,9 +1,6 @@
 * {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
-*::placeholder {
-  color: rgba(0, 0, 0, 0.5); }
-
 hr {
   display: block;
   height: 1px;

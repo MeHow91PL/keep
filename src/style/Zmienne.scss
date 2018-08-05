@@ -1,2 +1,36 @@
 $placeholder-color-grey: #909090;
 $brudnyBialy:rgb(250, 250, 250);
+@mixin animatedTitle($w, $h:0px, $padd: 0px) {
+    $hp: (2 * $padd) + $h;
+    content: attr(data-title);
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    position: absolute;
+    top: $hp - 5px;
+    left: 5px;
+    font-size: small;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    animation-name: showTitle;
+    animation-duration: 460ms;
+    white-space: nowrap;
+    @keyframes showTitle {
+        0% {
+            opacity: 0;
+            border-radius: 5px 5px 50px 50px;
+            // clip-path: circle(0% at 50% 50%);
+        }
+        60% {
+            opacity: 0;
+            border-radius: 5px 5px 50px 50px;
+            // clip-path: circle(0% at 50% 50%);
+        }
+        100% {
+            opacity: 1;
+            border-radius: 5px;
+            //    clip-path: circle(100.0% at 50% 50%);
+        }
+    }
+}

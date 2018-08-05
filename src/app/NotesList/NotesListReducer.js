@@ -1,7 +1,8 @@
-import { REQUEST_ADD_NOTICE_DONE } from "../actions";
+import { REQUEST_ADD_NOTICE_DONE, SEARCH_NOTE } from "../actions";
 
 const initState = {
     Notes: [],
+    FilteredNotes: [],
     Container: {
         Height: 0,
         Width: 0
@@ -25,6 +26,10 @@ const NotesList = (state = initState, action) => {
         case REQUEST_ADD_NOTICE_DONE:
             console.log('Added: ', action.payload);
             return state
+        case SEARCH_NOTE:
+            return {
+                ...state, FilteredNotes: action.payload
+            }
         default:
             return state
     }

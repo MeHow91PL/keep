@@ -10,33 +10,35 @@ import SearchItem from './SearchItemComponent';
 import { TypeItem, LabelItem } from './SearchItems';
 
 //Actions
-import { setSearchFilter } from '../SearchInput/SearchActions';
+import { setSearchFilter, searchNote } from '../SearchInput/SearchActions';
 
 //Others
 import { FilterTypes } from './SearchItems';
 
 class SearchView extends Component {
+
     render() {
         // const { TypeItem } = this.props;
         // const searchFilter = filtres[filter]
 
-        const { setSearchFilter } = this.props;
+        const { setSearchFilter, notes } = this.props;
         return (
             <div>
-                <div className="notatka">
-                    {
-                        <SearchItem {...TypeItem} setSearchFilter={setSearchFilter} />
-                    }
+                <div className={`filterContainer ${notes.length > 0 ? 'hidden' : ''}`}>
+                    <div className={`notatka`}>
+                        {
+                            <SearchItem {...TypeItem} setSearchFilter={setSearchFilter} />
+                        }
+                    </div>
+                    <div className="notatka">
+                        {
+                            <SearchItem {...LabelItem} setSearchFilter={setSearchFilter} />
+                        }
+                    </div>
+                    <div className="notatka">Rzeczy</div>
                 </div>
-                <div className="notatka">
-                    {
-                        <SearchItem {...LabelItem} setSearchFilter={setSearchFilter}/>
-                    }
-                </div>
-                <div className="notatka">Rzeczy</div>
-
                 <div className="searchResults">
-                    <NotesList notes={{}}/>
+                    <NotesList notes={notes} />
                 </div>
             </div>
         )
@@ -44,11 +46,12 @@ class SearchView extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-
+    notes: state.NotesList.FilteredNotes
 })
 
 const mapDispatchToProps = {
-    setSearchFilter
+    setSearchFilter,
+    searchNote
     // setSearchFilter: (filter) => dispatch(setSearchFilter(filter))
 }
 

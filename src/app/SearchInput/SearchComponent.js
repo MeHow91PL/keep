@@ -7,17 +7,26 @@ import { searchMain, search } from '../paths';
 import PropTypes from 'prop-types'
 
 //Actions
-import { setPaceholder, setSearchFilter, setInputActive, setInputDeactive } from './SearchActions';
+import { setPaceholder, setSearchFilter, setInputActive, setInputDeactive, startSearchNote } from './SearchActions';
 
 class SearchInput extends Component {
-    render() {
-        const { setSerchMode, placeholder, setInputActive, setInputDeactive, isActive, actualUrl } = this.props;
 
+    onKeyUpHandler = (e) => {
+        const {startSearchNote} = this.props;
+        const val = e.target.value;
+        startSearchNote(val);
+    }
+
+    render() {
+        //vars
+        const { placeholder, isActive, actualUrl } = this.props;
+        //func
+        const { setSerchMode, setInputActive, setInputDeactive, startSearchNote } = this.props;
         const onFocus = () => {
             setInputActive();
             console.log(actualUrl);
-            
-            if(!actualUrl.includes(search)) setSerchMode();
+
+            if (!actualUrl.includes(search)) setSerchMode();
         }
         return (
             <div className={`szukaj-cont ${isActive ? 'active' : ''}`}>
@@ -35,6 +44,7 @@ class SearchInput extends Component {
                     placeholder={placeholder}
                     onFocus={onFocus}
                     onBlur={setInputDeactive}
+                    onKeyUp={this.onKeyUpHandler}
                 />
             </div>
         )
@@ -49,7 +59,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = ({
     setSerchMode: () => push(searchMain),
-    setInputActive, setInputDeactive
+    setInputActive, setInputDeactive, startSearchNote
 })
 
 // const mapDispatchToProps = {     setSerchMode: () => {
@@ -59,7 +69,8 @@ SearchInput.propTypes = {
     placeholder: PropTypes.string,
     setSerchMode: PropTypes.func.isRequired,
     setInputActive: PropTypes.func.isRequired,
-    setInputDeactive: PropTypes.func.isRequired
+    setInputDeactive: PropTypes.func.isRequired,
+    startSearchNote: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchInput)

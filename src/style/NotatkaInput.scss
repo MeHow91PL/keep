@@ -40,17 +40,23 @@
         justify-content: flex-end;
     }
     .btn {
+        $btnH: 25px;
+        $btnW: 25px;
         display: flex;
+        height: $btnH;
+        width: $btnW;
         justify-content: center;
         align-items: center;
+        position: relative;
         margin: 3px 13px;
-        width: 25px;
-        height: 25px;
-        cursor: pointer;
-        user-select: none;
         opacity: 0.5;
+        user-select: none;
+        cursor: pointer;
         &:hover {
             opacity: 1;
+        }
+        &[data-title]:hover:after {
+            @include animatedTitle($btnW, $btnH)
         }
     }
     .zamknij {
@@ -72,8 +78,18 @@
         >.buttons-cont {
             justify-content: flex-start;
             .btn {
-                margin: 0;
-                padding: 15px;
+                $btnH: 25px;
+                $btnW: 25px;
+                width: $btnW;
+                height: $btnH;
+                margin: 15px;
+                &>svg{
+                        width: 90%;
+                        height: 90%;
+                    }
+                &[data-title]:hover:after {
+                    @include animatedTitle($btnW, $btnH)
+                }
                 &:first-child {
                     padding-left: 0px;
                 }

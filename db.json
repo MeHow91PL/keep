@@ -1,26 +1,31 @@
 {
   "notes": [
     {
-      "id": 1,
-      "tytul": "json-server",
-      "tekst": "typicode"
+      "tytul": "Tytuł",
+      "tekst": "Tesk",
+      "aktywny": true,
+      "createDate": "2018-08-05T13:05:26.103Z",
+      "id": 1
     },
     {
-      "tytul": "Tytuł",
-      "tekst": "Notatka",
+      "tytul": "Notatka 2df",
+      "tekst": "<div>sadklkjddfg</div><div>oipuidsf<br></div><div>ghfgh<br></div>",
       "aktywny": true,
+      "createDate": "2018-08-05T13:06:12.642Z",
       "id": 2
     },
     {
-      "tytul": "tytuł 2",
-      "tekst": "<div>Długa</div><div>Notatka<br></div>",
+      "tytul": "TEst",
+      "tekst": "sefserfesf",
       "aktywny": true,
+      "createDate": "2018-08-05T13:06:38.981Z",
       "id": 3
     },
     {
-      "tytul": "fsdlkfnksdf",
-      "tekst": "sdfknsdlkfnksdf",
+      "tytul": "test",
+      "tekst": "<div>test</div><div><br></div>",
       "aktywny": true,
+      "createDate": "2018-08-05T13:08:43.014Z",
       "id": 4
     }
   ]

@@ -1,9 +1,13 @@
 import {
-    SEARCH_NOTE, SET_PLACEHOLDER, SET_SEARCH_FILTER, SET_INPUT_DEACTIVE, SET_INPUT_ACTIVE
+    SEARCH_NOTE_START, SEARCH_NOTE, SET_PLACEHOLDER, SET_SEARCH_FILTER, SET_INPUT_DEACTIVE, SET_INPUT_ACTIVE
 } from '../actions';
 
 export const searchNote = (payload) => ({
     type: SEARCH_NOTE,
+    payload
+})
+export const startSearchNote = (payload) => ({
+    type: SEARCH_NOTE_START,
     payload
 })
 

@@ -34,16 +34,43 @@
     justify-content: flex-end; }
   .dodajNotatke-input .btn {
     display: flex;
+    height: 25px;
+    width: 25px;
     justify-content: center;
     align-items: center;
+    position: relative;
     margin: 3px 13px;
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
+    opacity: 0.5;
     user-select: none;
-    opacity: 0.5; }
+    cursor: pointer; }
     .dodajNotatke-input .btn:hover {
       opacity: 1; }
+    .dodajNotatke-input .btn[data-title]:hover:after {
+      content: attr(data-title);
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      position: absolute;
+      top: 20px;
+      left: 5px;
+      font-size: small;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      animation-name: showTitle;
+      animation-duration: 460ms;
+      white-space: nowrap; }
+
+@keyframes showTitle {
+  0% {
+    opacity: 0;
+    border-radius: 5px 5px 50px 50px; }
+  60% {
+    opacity: 0;
+    border-radius: 5px 5px 50px 50px; }
+  100% {
+    opacity: 1;
+    border-radius: 5px; } }
   .dodajNotatke-input .zamknij {
     min-width: 100px;
     font-size: 0.9em;
@@ -60,8 +87,38 @@
     .dodajNotatke-input .rozwiniete > .buttons-cont {
       justify-content: flex-start; }
       .dodajNotatke-input .rozwiniete > .buttons-cont .btn {
-        margin: 0;
-        padding: 15px; }
+        width: 25px;
+        height: 25px;
+        margin: 15px; }
+        .dodajNotatke-input .rozwiniete > .buttons-cont .btn > svg {
+          width: 90%;
+          height: 90%; }
+        .dodajNotatke-input .rozwiniete > .buttons-cont .btn[data-title]:hover:after {
+          content: attr(data-title);
+          background: rgba(0, 0, 0, 0.8);
+          display: flex;
+          position: absolute;
+          top: 20px;
+          left: 5px;
+          font-size: small;
+          color: white;
+          padding: 5px 10px;
+          border-radius: 5px;
+          overflow: hidden;
+          animation-name: showTitle;
+          animation-duration: 460ms;
+          white-space: nowrap; }
+
+@keyframes showTitle {
+  0% {
+    opacity: 0;
+    border-radius: 5px 5px 50px 50px; }
+  60% {
+    opacity: 0;
+    border-radius: 5px 5px 50px 50px; }
+  100% {
+    opacity: 1;
+    border-radius: 5px; } }
         .dodajNotatke-input .rozwiniete > .buttons-cont .btn:first-child {
           padding-left: 0px; }
         .dodajNotatke-input .rozwiniete > .buttons-cont .btn:last-child {

@@ -56,7 +56,9 @@
     "redux-observable": "^1.0.0",
     "redux-thunk": "^2.3.0",
     "resolve": "1.6.0",
+    "rx-devtools": "0.0.1-alpha.54",
     "rxjs": "^6.2.2",
+    "rxjs-compat": "^6.2.2",
     "sass-loader": "^7.1.0",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
@@ -74,7 +76,8 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "test": "node scripts/test.js --env=jsdom",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "db": "json-server --watch db.json"
   },
   "jest": {
     "collectCoverageFrom": [

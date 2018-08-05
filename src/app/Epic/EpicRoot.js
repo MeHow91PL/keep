@@ -10,36 +10,38 @@ import uuid from 'uuid/v4';
 import {
     FETCH_NOTES_REQUEST_START, ACTIVE_NOTE,
     FETCH_NOTES_REQUEST_DONE, DEACTIVE_NOTE,
-    REQUEST_ADD_NOTICE_START, REQUEST_ADD_NOTICE_DONE, REQUEST_ADD_NOTICE_REJECTED
+    REQUEST_ADD_NOTICE_START, REQUEST_ADD_NOTICE_DONE, REQUEST_ADD_NOTICE_REJECTED,
+    SEARCH_NOTE_START, SEARCH_NOTE
 } from '../actions';
 
 const apiUrl = 'http://localhost:3000/'
 
-const fetchNotes = action$ => action$.pipe(
-    ofType(FETCH_NOTES_REQUEST_START),
-    mergeMap(action =>
-        ajax.getJSON(apiUrl + 'notes/').pipe(
-            map(
-                response => ({ type: 'FETCH_NOTES_REQUEST_DONE', payload: response })
+const fetchNotes = action$ =>
+    action$.pipe(
+        ofType(FETCH_NOTES_REQUEST_START),
+        mergeMap(action =>
+            ajax.getJSON(apiUrl + 'notes/').pipe(
+                map(
+                    response => ({ type: 'FETCH_NOTES_REQUEST_DONE', payload: response })
+                )
+                //#region Get from Firebase directly
+
+                // Observable.create(observer => {
+                //     database.on('value', snap => {
+                //         console.log(snap.val());
+
+                //         observer.next({ type: FETCH_NOTES_REQUEST_DONE, payload: snap.val() })
+                //     })
+                // })
+
+                //#endregion
+                , catchError(err => of({
+                    type: REQUEST_ADD_NOTICE_REJECTED,
+                    payload: err
+                }))
             )
-            //#region Get from Firebase directly
-
-            // Observable.create(observer => {
-            //     database.on('value', snap => {
-            //         console.log(snap.val());
-
-            //         observer.next({ type: FETCH_NOTES_REQUEST_DONE, payload: snap.val() })
-            //     })
-            // })
-
-            //#endregion
-            , catchError(err => of({
-                type: REQUEST_ADD_NOTICE_REJECTED,
-                payload: err
-            }))
         )
     )
-)
 
 const addNote = action$ => action$.pipe(
     ofType(REQUEST_ADD_NOTICE_START),
@@ -62,6 +64,26 @@ const addNote = action$ => action$.pipe(
     )
 )
 
+const searchNote = action$ => action$.pipe(
+    ofType(SEARCH_NOTE_START),
+    debounceTime(500),
+    mergeMap( ({payload}) =>
+        ajax.getJSON(apiUrl + 'notes/').pipe(
+            map(
+                res => {
+                    const filtered = payload.trim().length === 0 ? [] :
+                    res.filter(
+                        n=> n.tytul.includes(payload) || n.tekst.includes(payload)
+                    )
+                    console.log('filtered',filtered);
+                    
+                    return { type: SEARCH_NOTE, payload: filtered }
+                }
+            )
+        )
+    )
+)
+
 
 // database.push({
 //         id:uuid(), 
@@ -75,5 +97,6 @@ const addNote = action$ => action$.pipe(
 
 export default combineEpics(
     fetchNotes,
-    addNote
+    addNote,
+    searchNote
 )

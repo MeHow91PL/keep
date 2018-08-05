@@ -1,9 +1,11 @@
 //Search mode
-export const SET_PLACEHOLDER = 'SET_PLACEHOLDER'
 export const SET_SEARCH_FILTER = 'SET_SEARCH_FILTER'
-export const SEARCH_NOTE = 'SEARCH_NOTE'
+//Input
 export const SET_INPUT_ACTIVE = 'SET_INPUT_ACTIVE'
 export const SET_INPUT_DEACTIVE = 'SET_INPUT_DEACTIVE'
+export const SEARCH_NOTE_START = 'SEARCH_NOTE_START'
+export const SEARCH_NOTE = 'SEARCH_NOTE'
+export const SET_PLACEHOLDER = 'SET_PLACEHOLDER'
 
 //Notatka
 export const ACTIVE_NOTE = 'ACTIVE_NOTE'
